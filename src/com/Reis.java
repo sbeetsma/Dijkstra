@@ -6,7 +6,7 @@ public class Reis implements Comparable<Reis> {
     private Node startNode;
     private Node eindNode;
     private ArrayList<Node> kortstePad;
-    private int totaalGewicht = 0;
+    private double totaalGewicht = 0;
 
     public Reis(Node startNode, Node eindNode){
         this.startNode = startNode;
@@ -22,7 +22,7 @@ public class Reis implements Comparable<Reis> {
 
     }
 
-    public int getTotaalGewicht() {
+    public double getTotaalGewicht() {
         return totaalGewicht;
     }
 
@@ -65,6 +65,6 @@ public class Reis implements Comparable<Reis> {
 
     @Override
     public int compareTo(Reis o) {
-        return Integer.compare(this.totaalGewicht, o.totaalGewicht);
+        return Double.compare(this.totaalGewicht, o.totaalGewicht);
     }
 }

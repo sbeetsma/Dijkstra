@@ -1,16 +1,16 @@
 package com;
 
-public class Stap {
+public class Stap{
 
-    private final int gewicht;
+    private final double gewicht;
     private final Node bestemming;
 
-    public Stap(Node naar, int gewicht){
+    public Stap(Node naar, double gewicht){
         this.bestemming = naar;
         this.gewicht = gewicht;
     }
 
-    public int getGewicht() {
+    public double getGewicht() {
         return gewicht;
     }
 
