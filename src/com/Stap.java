@@ -3,10 +3,10 @@ package com;
 public class Stap {
 
     private final int gewicht;
-    private final Node naar;
+    private final Node bestemming;
 
     public Stap(Node naar, int gewicht){
-        this.naar = naar;
+        this.bestemming = naar;
         this.gewicht = gewicht;
     }
 
@@ -14,9 +14,11 @@ public class Stap {
         return gewicht;
     }
 
-    public Node getNaar() {
-        return naar;
+    public Node getBestemming() {
+        return bestemming;
+
     }
+
 
 
 }
