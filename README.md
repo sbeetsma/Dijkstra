@@ -1,9 +1,15 @@
-# Dijkstra
-3. Dijkstra Shortest Path &amp; Datastructuren
+3. Dijkstra Shortest Path & Datastructuren
 
-Current version can change node's their distance from a passed starting node.
-To-do:
-	:Extend class Stap with vlucht/rit.. so that to implement different weight factors.
-	:Implement comparable in Reis.
-	:Implement unit testing.
-	:Include UML. 
+Run src/com/Main.java
+
+Klassen src/com/:
+Node: vertices 
+Reis: dijkstra's algoritme
+Stap: edges/overgangen van de vertices
+Rit extends Rit
+Treinrit extends Rit
+Vlucht extends Rit 
+
+Unittesting in test/com/:
+Reistest: dijkstra's algoritme wordt getest met standaard 'Stap' en 'Vlucht'
+StapTest: test Stap en klassen die Stap extenden.
