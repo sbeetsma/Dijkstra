@@ -3,18 +3,14 @@ package com;
 import java.util.*;
 
 public class Reis implements Comparable<Reis> {
-    private Node startNode;
-    private Node eindNode;
     private ArrayList<Node> kortstePad;
     private double totaalGewicht = 0;
 
     public Reis(Node startNode, Node eindNode){
-        this.startNode = startNode;
-        this.eindNode = eindNode;
         // voor elke nieuwe reis wordt opnieuw uitgerekend voor elke node wat zijn kortste pad is;
         dijkstra(startNode);
         // totaal gewicht wordt in KorstePad ook geupdate
-        this.kortstePad = getKortstePad(eindNode);
+        this.kortstePad = kortstePad(eindNode);
         this.totaalGewicht = eindNode.getAfstandVanafBegin();
     }
     public ArrayList<Node> getKortstePad() {
@@ -52,7 +48,7 @@ public class Reis implements Comparable<Reis> {
         // method die het kortste pad returned vanaf een target node gebasseerd op de eerder uitgerekende,
 
 
-        public ArrayList<Node> getKortstePad(Node target){
+        public ArrayList<Node> kortstePad(Node target){
             ArrayList<Node> pad = new ArrayList<>(Collections.singletonList(target));
 
             while (target.getVoorganger() != null) {
@@ -67,4 +63,7 @@ public class Reis implements Comparable<Reis> {
     public int compareTo(Reis o) {
         return Double.compare(this.totaalGewicht, o.totaalGewicht);
     }
+
+
+
 }
