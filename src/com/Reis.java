@@ -11,7 +11,7 @@ public class Reis implements Comparable<Reis> {
         dijkstra(startNode);
         // totaal gewicht wordt in KorstePad ook geupdate
         this.kortstePad = kortstePad(eindNode);
-        this.totaalGewicht = eindNode.getAfstandVanafBegin();
+        this.totaalGewicht = eindNode.getGewichtVanafBegin();
     }
     public ArrayList<Node> getKortstePad() {
         return kortstePad;
@@ -25,15 +25,15 @@ public class Reis implements Comparable<Reis> {
     // leerbron: http://nmamano.com/blog/dijkstra/dijkstra.html
     public void dijkstra(Node startPunt){
         startPunt.setBezocht(true);
-        startPunt.setAfstandVanafBegin(0);  // afstand van startpunt naar startpunt is 0
+        startPunt.setGewichtVanafBegin(0);  // afstand van startpunt naar startpunt is 0
         PriorityQueue<Node> priorityQueue = new PriorityQueue<>(); // priorityQueue gebasseerd op totaal gewicht/afstand attribuut van Node
         priorityQueue.add(startPunt);
         while (!priorityQueue.isEmpty()){
             Node huidigeNode = priorityQueue.poll();
             for(Stap overgang : huidigeNode.getOvergangen()){Node volgendeNode = overgang.getBestemming();
-                if (!volgendeNode.isBezocht()) {this.totaalGewicht = huidigeNode.getAfstandVanafBegin()+overgang.getGewicht();
-                    if(this.totaalGewicht<volgendeNode.getAfstandVanafBegin()){
-                        volgendeNode.setAfstandVanafBegin(this.totaalGewicht);
+                if (!volgendeNode.isBezocht()) {this.totaalGewicht = huidigeNode.getGewichtVanafBegin()+overgang.getGewicht();
+                    if(this.totaalGewicht<volgendeNode.getGewichtVanafBegin()){
+                        volgendeNode.setGewichtVanafBegin(this.totaalGewicht);
                         volgendeNode.setVoorganger(huidigeNode);
                         priorityQueue.add(volgendeNode);
                     }

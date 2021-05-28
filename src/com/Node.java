@@ -5,7 +5,7 @@ import java.util.*;
 public class Node implements Comparable<Node> {
     private String naam;
     private Node voorganger;
-    private double afstandVanafBegin = Integer.MAX_VALUE;
+    private double gewichtVanafBegin = Integer.MAX_VALUE;
     private boolean bezocht;
 
     public Node(String naam) {
@@ -14,12 +14,12 @@ public class Node implements Comparable<Node> {
 
     private ArrayList<Stap> overgangen = new ArrayList<>(); // alle overgangen
 
-    public double getAfstandVanafBegin() {
-        return afstandVanafBegin;
+    public double getGewichtVanafBegin() {
+        return gewichtVanafBegin;
     }
 
-    public void setAfstandVanafBegin(double afstandVanafBegin) {
-        this.afstandVanafBegin = afstandVanafBegin;
+    public void setGewichtVanafBegin(double gewichtVanafBegin) {
+        this.gewichtVanafBegin = gewichtVanafBegin;
     }
 
     public boolean isBezocht() {
@@ -53,6 +53,6 @@ public class Node implements Comparable<Node> {
 
     @Override
     public int compareTo(Node o) {
-        return Double.compare(this.afstandVanafBegin, o.afstandVanafBegin);
+        return Double.compare(this.gewichtVanafBegin, o.gewichtVanafBegin);
     }
 }
