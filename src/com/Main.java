@@ -1,11 +1,25 @@
 package com;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args){
-        Node s0 = new Node("Locatie_1");
-        Node s1 = new Node("Locatie_2");
-        System.out.println(s0.getNeighbors());
-        s0.addNeighbor(s1, 4);
-        System.out.println(s0.getNeighbors());
+    Node node0 = new Node("A");
+    Node node1 = new Node("B");
+    Node node2 = new Node("C");
+    Node node3 = new Node("D");
+
+
+
+    node0.setOvergangen(new ArrayList<>(Arrays.asList(new Stap(node1, 10), new Stap(node2, 3))));
+    node1.setOvergangen(new ArrayList<>(Arrays.asList(new Stap(node3, 7))));
+    node2.setOvergangen(new ArrayList<>(Arrays.asList(new Stap(node3, 6))));
+
+        //System.out.println(nodeA.getOvergangen());
+    Reis test = new Reis(node0, node3);
+    System.out.println(test.getKortstePad());
+        System.out.println(test.getTotaalGewicht());
+
     }
 }
