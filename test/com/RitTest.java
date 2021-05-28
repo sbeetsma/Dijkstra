@@ -36,7 +36,6 @@ class RitTest {
 
         // [Rhenen, Utrecht, Den Haag]
         assertEquals(new ArrayList<Node>(Arrays.asList(s0, s1, s4)), testReis.getKortstePad());
-        //System.out.println(testReis.getTotaal());
    }
 
 
